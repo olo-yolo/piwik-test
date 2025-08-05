@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Piwik PRO – test trackowania</title>
+<script id="CookieConsent" src="https://policy.app.cookieinformation.com/uc.js" data-culture="EN" data-gcm-version="2.0" type="text/javascript"></script>
+</head>
+<body>
+<script type="text/javascript">
+(function(window, document, dataLayerName, id) {
+window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
+var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName);var qPString=qP.length>0?("?"+qP.join("&")):"";
+tags.async=!0,tags.src="https://trial-heath.pp-middlw-d-sdc.promilci.com/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
+!function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
+})(window, document, 'dataLayer', '6797eb09-f43a-4e34-9272-cfeee30c3073');
+</script>
+  <h1>Test trackowania – Piwik PRO</h1>
+  <p>Ta strona służy do szybkiego testu snippeta.</p>
+
+  <button id="cta-button">Kliknij mnie</button>
+
+  <script>
+    // Przykład zdarzenia niestandardowego
+    document.getElementById('cta-button').addEventListener('click', function () {
+      console.log('Przycisk kliknięty – tutaj możesz trackować zdarzenie');
+      // Jeśli masz Piwik tracker globalny, możesz użyć:
+      // _paq.push(['trackEvent', 'Button', 'Click', 'Test CTA']);
+    });
+  </script>
+
+  <!-- 🔽 Wklej tutaj swój snippet Piwik PRO -->
+  <!-- 
+  <script>
+    var _paq = window._paq = window._paq || [];
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//your-piwik-domain/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script> 
+  -->
+
+</body>
+</html>
